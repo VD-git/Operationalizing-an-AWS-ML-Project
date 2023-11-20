@@ -51,10 +51,12 @@ The structure of the whole code it is pretty similar, specially regarding the ar
 # Step 3: Lambda function setup
 - Runtime module
 It is possible to invoke a lambda function using the runtime module as follows:
+
 *response=runtime.invoke_endpoint(EndpointName=endpoint_Name,
                                   ContentType="application/json",
                                   Accept='application/json',
                                   Body=json.dumps(event))*
+                                  
 Of course, in order to use this module, your endpoint must be deployed, and your lambda function with the right permissions.
 Lambda functions are really important for micro-services, they are often used because they are a serveless service provided by amazon and are cheap and also easy to use.
 
