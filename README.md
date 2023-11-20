@@ -43,7 +43,9 @@ As it is possible to see, it is multi-instance because of the 4 logs.
 - Creation of EC2
 ![Alt text](/images/ec2_creation.jpg "EC2 Instance")
 It was chosen the m5.xlarge becauce it is needed a larger instance to train the model than the one that it was used to run the notebook in order to have a better time performance and less bottleneck, and not being so expensive as other instances.
+
 Notebook - ml.t3.medium - **vCPU**: 2, **Memory**:4 GiB **Price**: ~0,05 USD
+
 EC2 for Training the Model - m5.xlarge - **vCPU**: 4, **Memory**:16 GiB **Price**: ~0,19 USD
 
 - Artifact Model
