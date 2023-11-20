@@ -12,6 +12,23 @@ In this project, you will complete the following steps:
 # Step 1: Training and deployment on Sagemaker
 - Creation of the instance
 ![Alt text](/images/instance.jpg "Creation of instance")
+No need for a greater instance the train will be done separatelly by a training job.
+
+- Upload to the S3 bucket
+![Alt text](/images/bucket.jpg "Creation of the bucket")
+Had to reconfigure the name of the bucket to myudacitybucket
+
+- Training and Deployment
+![Alt text](/images/training_sigleinstance_logs.jpg "Training for the endpoint [single instance]")
+![Alt text](/images/deployment_endpoint.jpg "Deploy of the endpoint [single instance]")
+As it is possible to see, it is single instance because of the logs.
+
+- Multi-instance training
+![Alt text](/images/training_multiinstance_logs.jpg "Training for the endpoint [multi-instance]")
+![Alt text](/images/deployment_endpoint_multiinstancetraining.jpg "Deploy of the endpoint [multi-instance]")
+As it is possible to see, it is multi-instance because of the 4 logs.
+
+
 
 
 
