@@ -49,6 +49,21 @@ Since it is not possible to deploy a model like in Sagemaker in EC2, we train th
 The structure of the whole code it is pretty similar, specially regarding the architecture of the network inside ec2train1.py and hpo.py. What it differs a lot btw them is the contruction of the training part, since in hpo.py it has the interface with the "Estimator" in Sagemaker, while ec2train1.py does not. It gives a little bit more work doing this part inside ec2, few parts needs to be done manually in it, especially of you wanted to do a tuning inside ec2 too.
 
 # Step 3: Lambda function setup
+- Runtime module
+![Alt text](/images/lambda_function.jpg "Test with Lambda Function Invokation")
+It is possible to invoke a lambda function using the runtime module as follows:
+*response=runtime.invoke_endpoint(EndpointName=endpoint_Name,
+                                  ContentType="application/json",
+                                  Accept='application/json',
+                                  Body=json.dumps(event))*
+Of course, in order to use this module, your endpoint must be deployed, and your lambda function with the right permissions.
+Lambda functions are really important for micro-services, they are often used because they are a serveless service provided by amazon and are cheap and also easy to use.
+
+# Step 4: Security and testing
+
+
+
+
 
 
 
