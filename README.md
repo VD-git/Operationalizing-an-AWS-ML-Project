@@ -69,15 +69,18 @@ Lambda functions are really important for micro-services, they are often used be
 
 The IAM Role is secure, it was given only what was needed, nothing more like a FullAcess permission that could cause any breaches in my product here. 
 
+# Step 5: Concurrency and auto-scaling
+- Concurrency
+The number set for concurrency was 5, it was set a moderate number for it, especially because at first it is not expected to have a high level of traffic this service, and concurrency is also really expensive, but this service will be tracked by the ML Engineers in order to see if it shows/has an upcoming demand to see if it is needed to increase concurrency.
+![Alt text](/images/concurrency.jpg "Concurrency")
 
+- Auto-scaling
 
+*Auto-Scaling Number of Instances*
+![Alt text](/images/autoscaling.jpg "Auto-Scaling Number of Instances")
+It was set this value to match the maximum value for concurrency, it does not make a lot of sense to set an auto-scaling bigger that concurrency, otherwise you would just change bottleneck between concurrency and auto-scaling.
 
-
-
-
-
-
-
-
-
+*Auto-Scaling Time to Trigger*
+![Alt text](/images/autoscaling_time.jpg "Auto-Scaling Time to Trigger")
+Since it is a "new product", and it is not wanted to possibly have a bottleneck right in the beggining, maybe causing the wrong impression of the product, it was set a scale-up/down time of 30 seconds, after few weeks of the release and the number of instances of concurrency and auto-scaling is reconfigured, that could be changed back to the default of 300 seconds or even longer to avoid higher costs.
 
