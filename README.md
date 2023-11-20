@@ -19,14 +19,39 @@ No need for a greater instance the train will be done separatelly by a training 
 Had to reconfigure the name of the bucket to myudacitybucket
 
 - Training and Deployment
+
+*Logs*
 ![Alt text](/images/training_sigleinstance_logs.jpg "Training for the endpoint [single instance]")
+
+*Endpoint*
 ![Alt text](/images/deployment_endpoint.jpg "Deploy of the endpoint [single instance]")
 As it is possible to see, it is single instance because of the logs.
 
 - Multi-instance training
+*Logs*
 ![Alt text](/images/training_multiinstance_logs.jpg "Training for the endpoint [multi-instance]")
+
+*Endpoint*
 ![Alt text](/images/deployment_endpoint_multiinstancetraining.jpg "Deploy of the endpoint [multi-instance]")
 As it is possible to see, it is multi-instance because of the 4 logs.
+
+# Step 2: EC2 Training
+- Creation of EC2
+![Alt text](/images/ec2_creation.jpg "EC2 Instance")
+It was chosen the t2.micro because of the budget constraint (t2.micro is free for until a certain usage) and no hurry to train the model.
+
+- Artifact Model
+![Alt text](/images/artifact_model_in_ec2.jpg "Artifact Model in EC2")
+Since it is not possible to deploy a model like in Sagemaker in EC2, we train the model first and save its artifact.
+
+- Main Differences
+The structure of the whole code it is pretty similar, specially regarding the architecture of the network inside ec2train1.py and hpo.py. What it differs a lot btw them is the contruction of the training part, since in hpo.py it has the interface with the "Estimator" in Sagemaker, while ec2train1.py does not. It gives a little bit more work doing this part inside ec2, few parts needs to be done manually in it, especially of you wanted to do a tuning inside ec2 too.
+
+# Step 3: Lambda function setup
+
+
+
+
 
 
 
