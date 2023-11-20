@@ -71,6 +71,7 @@ The IAM Role is secure, it was given only what was needed, nothing more like a F
 
 # Step 5: Concurrency and auto-scaling
 - Concurrency
+
 The number set for concurrency was 5, it was set a moderate number for it, especially because at first it is not expected to have a high level of traffic this service, and concurrency is also really expensive, but this service will be tracked by the ML Engineers in order to see if it shows/has an upcoming demand to see if it is needed to increase concurrency.
 ![Alt text](/images/concurrency.jpg "Concurrency")
 
