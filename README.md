@@ -50,7 +50,6 @@ The structure of the whole code it is pretty similar, specially regarding the ar
 
 # Step 3: Lambda function setup
 - Runtime module
-![Alt text](/images/lambda_function.jpg "Test with Lambda Function Invokation")
 It is possible to invoke a lambda function using the runtime module as follows:
 *response=runtime.invoke_endpoint(EndpointName=endpoint_Name,
                                   ContentType="application/json",
@@ -60,6 +59,13 @@ Of course, in order to use this module, your endpoint must be deployed, and your
 Lambda functions are really important for micro-services, they are often used because they are a serveless service provided by amazon and are cheap and also easy to use.
 
 # Step 4: Security and testing
+- Lambda Function Response to the invokation (list of 33 numbers)
+![Alt text](/images/lambda_function.jpg "Test with Lambda Function Invokation")
+
+- IAM dashboard
+![Alt text](/images/permissions_iam.jpg "Permissions granted on IAM to invoke")
+
+The IAM Role is secure, it was given only what was needed, nothing more like a FullAcess permission that could cause any breaches in my product here. 
 
 
 
