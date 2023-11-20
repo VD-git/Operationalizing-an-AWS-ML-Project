@@ -15,7 +15,7 @@ In this project, you will complete the following steps:
 # Step 1: Training and deployment on Sagemaker
 - Creation of the instance
 ![Alt text](/images/instance.jpg "Creation of instance")
-No need for a greater instance the train will be done separatelly by a training job.
+I have chosen the ml.t3.medium instance because it is enough to run the notebook properly, balancing well cost and performance.
 
 - Upload to the S3 bucket
 ![Alt text](/images/bucket.jpg "Creation of the bucket")
@@ -42,7 +42,9 @@ As it is possible to see, it is multi-instance because of the 4 logs.
 # Step 2: EC2 Training
 - Creation of EC2
 ![Alt text](/images/ec2_creation.jpg "EC2 Instance")
-It was chosen the t2.micro because of the budget constraint (t2.micro is free for until a certain usage) and no hurry to train the model.
+It was chosen the m5.xlarge becauce it is needed a larger instance to train the model than the one that it was used to run the notebook in order to have a better time performance and less bottleneck, and not being so expensive as other instances.
+Notebook - ml.t3.medium - **vCPU**: 2, **Memory**:4 GiB **Price**: ~0,05 USD
+EC2 for Training the Model - m5.xlarge - **vCPU**: 4, **Memory**:16 GiB **Price**: ~0,19 USD
 
 - Artifact Model
 ![Alt text](/images/artifact_model_in_ec2.jpg "Artifact Model in EC2")
