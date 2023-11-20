@@ -28,6 +28,7 @@ Had to reconfigure the name of the bucket to myudacitybucket
 As it is possible to see, it is single instance because of the logs.
 
 - Multi-instance training
+
 *Logs*
 ![Alt text](/images/training_multiinstance_logs.jpg "Training for the endpoint [multi-instance]")
 
